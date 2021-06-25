@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import QueryBuilder from 'react-querybuilder'
 import './App.css';
 
 function App() {
+  const fields = [
+    { name: 'Employees', label: 'Employees' },
+    { name: 'customers', label: 'customers' },
+    { name: 'Orders', label: 'Orders' },
+    { name: 'products', label: 'products' },
+    { name: 'Territories', label: 'Territories' },
+
+
+  ];
+
+  function logQuery(query) {
+    console.log(query)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <QueryBuilder fields={fields} onQueryChange={logQuery} />;
+
+
+
     </div>
   );
 }
